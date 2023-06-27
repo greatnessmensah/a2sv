@@ -12,3 +12,8 @@ class Solution:
                 hashset.add(reverse)
                 
         return len(hashset)
+
+    """
+    Time: O(N)
+    Space: O(N)
+    """
