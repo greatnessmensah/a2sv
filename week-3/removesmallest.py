@@ -18,3 +18,8 @@ def solve():
  
 if "__main__" == __name__:
     solve()
+
+"""
+Time: O(N(logN))
+Space: O(1)
+"""
