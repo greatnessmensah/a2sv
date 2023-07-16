@@ -12,4 +12,9 @@ class Solution:
                 r -= 1
             
         return False
-        
+
+
+"""
+Time: O(sqrt(N))
+Space: O(1)
+"""
