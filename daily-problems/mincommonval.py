@@ -1,16 +1,23 @@
-class Solution:
-    def getCommon(self, nums1: List[int], nums2: List[int]) -> int:
+class Solution(object):
+    def getCommon(self, nums1, nums2):
         """
-        convert both arrays to set and find intersection
-        return minimum common_val else -1.
+        left and right pointer moves when greater or less
+        else return -1
         """
-        common_vals = set(nums1).intersection(nums2)
-        if not common_vals:
-            return -1
-        else:
-            return min(common_vals)
+        left = right = 0
+        
+        while left < len(nums1) and right <len(nums2):
+            if nums1[left] < nums2[right]:
+                left += 1
+            elif nums1[left] > nums2[right]:
+                right += 1
+            else: 
+                return nums1[left]
+            
+        return -1
+        
 
 """
-Time: O(min(nums1, nums2)) => O(nums1 + nums2)
-Space: O(num1 + nums2)
+Time: O(nums1 + nums2)
+Space: O(1)
 """
