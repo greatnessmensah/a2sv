@@ -16,4 +16,13 @@ class Solution:
     
         return best
             
-        
+        """
+        lo, hi = -1, len(nums) - 1
+        while lo + 1 < hi:
+            mid = lo + (hi - lo) // 2
+            if nums[mid] <= nums[-1]:
+                hi = mid
+            else:
+                lo = mid
+        return nums[hi]
+        """
