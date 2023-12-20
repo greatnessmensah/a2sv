@@ -2,7 +2,6 @@ class Solution:
     def eventualSafeNodes(self, graph: List[List[int]]) -> List[int]:
         nodes = {i: [] for i in range(len(graph))}
         edges = defaultdict(int)
-        res = []
         
         for key in nodes.keys():
             for val in graph[key]:
@@ -11,10 +10,7 @@ class Solution:
             
         queue = deque([key for key, val in edges.items() if val == 0])
         
-        print(nodes)
-        print(edges)
-        print(queue)
-
+        
         while queue:
             node = queue.popleft()
 
@@ -23,9 +19,7 @@ class Solution:
                 if edges[nei] == 0:
                     queue.append(nei)
                     del edges[nei]
-
-            res.append(node)
-            
-        return sorted(res)
+        
+        return [key for key in nodes.keys() if edges[key] == 0 or key not in edges]
         
         
