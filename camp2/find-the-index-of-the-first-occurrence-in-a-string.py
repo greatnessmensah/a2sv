@@ -25,36 +25,57 @@ class Solution:
             
 #         return -1
                 
-        MOD = 10**9 + 7
-        alpha = {c: idx+1 for idx, c in enumerate(string.ascii_lowercase)}
-        res = 0
-        left = 0
+#         MOD = 10**9 + 7
+#         alpha = {c: idx+1 for idx, c in enumerate(string.ascii_lowercase)}
+#         res = 0
+#         left = 0
         
-        if len(needle) > len(haystack):
-            return -1
+#         if len(needle) > len(haystack):
+#             return -1
         
-        for i in range(len(needle)):
-            ex = len(needle)-1-i
-            res += (alpha[needle[i]] * (31**ex)) % MOD
-            res %= MOD
+#         for i in range(len(needle)):
+#             ex = len(needle)-1-i
+#             res += (alpha[needle[i]] * (31**ex)) % MOD
+#             res %= MOD
 
-        count = 0
-        for i in range(len(needle)):
-            ex = len(needle) - 1 - i
-            count += (alpha[haystack[i]] * (31**ex)) % MOD
-            count %= MOD
+#         count = 0
+#         for i in range(len(needle)):
+#             ex = len(needle) - 1 - i
+#             count += (alpha[haystack[i]] * (31**ex)) % MOD
+#             count %= MOD
 
-        if count == res:
-            return 0
+#         if count == res:
+#             return 0
 
-        for right in range(len(needle), len(haystack)):
-            count *= 31
-            count += (alpha[haystack[right]]) % MOD
-            count -= (alpha[haystack[left]] * (31**len(needle))) % MOD
-            count %= MOD
-            left += 1
+#         for right in range(len(needle), len(haystack)):
+#             count *= 31
+#             count += (alpha[haystack[right]]) % MOD
+#             count -= (alpha[haystack[left]] * (31**len(needle))) % MOD
+#             count %= MOD
+#             left += 1
             
-            if count == res:
-                return left
+#             if count == res:
+#                 return left
 
+#         return -1
+
+        s = needle + "#" + haystack
+        n = len(s)
+        lps = [0] * n
+
+        for i in range(1, n):
+            j = lps[i-1]
+
+            while j > 0 and s[i] != s[j]:
+                j = lps[j-1]
+
+            if s[i] == s[j]:
+                j += 1
+
+            if j == len(needle):
+                return i - len(needle)*2
+
+            lps[i] = j
+            
         return -1
+        
