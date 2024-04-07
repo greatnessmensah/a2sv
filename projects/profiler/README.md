@@ -8,4 +8,3 @@ A web app that displays various profile cards.
 * Nodejs
 * Typescript
 * Reactjs
-* Material UI
