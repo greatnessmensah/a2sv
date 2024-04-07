@@ -1,12 +1,18 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Card from "./components/Card";
+import { userProfiles, UserProfile } from "./data";
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
-      Hello World
+      <div className="card-container">
+        {userProfiles.map((user: UserProfile) => (
+          <Card key={user.id} user={user} />
+        ))}
+      </div>
     </div>
   );
-}
+};
 
 export default App;
