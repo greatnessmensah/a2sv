@@ -1,4 +1,4 @@
-# Profiler
+# Profiler 😃
 
 A web app that displays various profile cards.
 

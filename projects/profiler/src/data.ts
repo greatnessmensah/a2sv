@@ -1,0 +1,4 @@
+let people = [];
+
+
+export {};
