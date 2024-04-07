@@ -1,9 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
 .App {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   background-color: #f0f0f0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .card-container {
@@ -18,6 +21,7 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 20px;
+  font-weight: bold;
   background-color: #fff;
   transition: transform 0.3s ease;
 }
@@ -27,8 +31,8 @@
 }
 
 .avatar {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   background-color: #2f54c3;
   font-weight: bolder;
