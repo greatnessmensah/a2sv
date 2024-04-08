@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
 
 function App() {
@@ -10,18 +10,36 @@ function App() {
   }
   function handleMinusClick() {
     if (counter === count) {
-      setCounter(count)
+      setCounter(count);
     } else {
-    setCounter(counter - 1)
+      setCounter(counter - 1);
     }
   }
+
+  useEffect(() => {
+    document.title = `${counter}`;
+  }, [counter]);
+
+  const inputRef = useRef<HTMLInputElement>(null);
 
   return (
     <div className="App">
       <div className="counter">{counter}</div>
-      <div className="buttons">
-      <button className="button-click" onClick={handlePlusClick}>+</button>
-      <button className="button-click" onClick={handleMinusClick}>-</button>
+      <div className="buttons" ref={inputRef}>
+        <button
+          className="button-click"
+          onClick={handlePlusClick}
+          style={{ backgroundColor: "#81c784" }}
+        >
+          +
+        </button>
+        <button
+          className="button-click"
+          onClick={handleMinusClick}
+          style={{ backgroundColor: "#e57373" }}
+        >
+          -
+        </button>
       </div>
     </div>
   );
