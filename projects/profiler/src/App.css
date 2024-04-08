@@ -22,12 +22,19 @@
   border-radius: 5px;
   padding: 20px;
   font-weight: bold;
-  background-color: #fff;
+  background-color: #9cbaae;
   transition: transform 0.3s ease;
 }
 
 .card:hover {
   transform: scale(1.05);
+}
+
+.button {
+  width: 80px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #024028;
 }
 
 .avatar {
@@ -45,7 +52,7 @@
 }
 
 .info a {
-  color: #007bff;
+  color: #f9fbfd;
   text-decoration: none;
 }
 

@@ -11,7 +11,7 @@ const Info: React.FC<InfoProps> = ({ name, bio, website }) => {
     <div className="info">
       <h2>{name}</h2>
       <p>{bio}</p>
-      {website && <a href={website}>Website</a>}
+      {website && <button className="button"><a href={website}>Website</a></button>}
     </div>
   );
 };
