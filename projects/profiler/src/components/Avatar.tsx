@@ -13,7 +13,7 @@ const Avatar: React.FC<AvatarProps> = ({ imageUrl, name }) => {
       .split(" ")
       .map((word) => word[0])
       .join("");
-    return <div className="avatar">{initials}</div>;
+    return <div className="avatar" style={{backgroundColor: '#2f54c3'}}>{initials}</div>;
   }
 };
 

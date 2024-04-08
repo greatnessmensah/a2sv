@@ -1,3 +1,7 @@
+const avatar1 = require("./images/avatar1.png")
+const avatar2 = require("./images/avatar2.png")
+const avatar3 = require("./images/avatar3.png")
+
 export interface UserProfile {
   id: number;
   name: string;
@@ -14,7 +18,7 @@ export const userProfiles: UserProfile[] = [
     deparment: "Engineering",
     bio: "Software Engineer",
     website: "https://johndoe.com",
-    imageUrl: "./public/avatar1.png",
+    imageUrl: avatar1,
   },
   {
     id: 2,
@@ -22,18 +26,18 @@ export const userProfiles: UserProfile[] = [
     deparment: "Research",
     bio: "Physicist",
     website: "https://janesmith.com",
-    imageUrl: "./public/avatar2.png",
+    imageUrl: avatar2,
   },
   {
     id: 3,
     name: "Bob Johnson",
     deparment: "Marine Biology",
     bio: "Marine Scientist",
-    imageUrl: "./public/avatar3.png",
+    imageUrl: avatar3,
   },
   {
     id: 4,
-    name: "Alice Brown",
+    name: "Hannah Mason",
     deparment: "Engineering",
     bio: "Electrical Engineer",
     website: "https://alicebrown.com",
