@@ -1,18 +1,20 @@
 import ArticleList from "../components/ArticleList";
-import { server } from "../config";
+import Link from "next/link";
+import styles from "../styles/Home.module.css"
 
 export default function Home({ articles }) {
   return (
     <div>
+      <Link href="/article/create" >
+        <button className={styles.button}>Create Post</button>
+      </Link>
       <ArticleList articles={articles} />
     </div>
   );
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch(
-    `https://my-json-server.typicode.com/greatnessmensah/a2sv/articles`
-  );
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
   const articles = await res.json();
 
   return {

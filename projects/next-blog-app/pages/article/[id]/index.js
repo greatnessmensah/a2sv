@@ -18,7 +18,7 @@ const Article = ({ article }) => {
 
 export const getStaticProps = async (context) => {
   const res = await fetch(
-    `https://my-json-server.typicode.com/greatnessmensah/a2sv/articles/${context.params.id}`
+    `https://jsonplaceholder.typicode.com/posts/${context.params.id}`
   );
 
   const article = await res.json();
@@ -32,7 +32,7 @@ export const getStaticProps = async (context) => {
 
 export const getStaticPaths = async () => {
   const res = await fetch(
-    `https://my-json-server.typicode.com/greatnessmensah/a2sv/articles`
+    `https://jsonplaceholder.typicode.com/posts`
   );
 
   const articles = await res.json();
