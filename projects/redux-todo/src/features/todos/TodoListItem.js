@@ -11,7 +11,9 @@ import {
   selectTodoById,
 } from './todosSlice'
 
+// Destructure `props.id`, since we just need the ID value
 const TodoListItem = ({ id }) => {
+  // Call our `selectTodoById` with the state _and_ the ID value
   const todo = useSelector((state) => selectTodoById(state, id))
   const { text, completed, color } = todo
 

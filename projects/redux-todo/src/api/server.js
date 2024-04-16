@@ -10,7 +10,7 @@ const initialState = {
   status: StatusFilters.All,
   colors: [],
 }
-// we have all filter comtrols here
+// this controls the filter operations
 const filtersSlice = createSlice({
   name: 'filters',
   initialState,
