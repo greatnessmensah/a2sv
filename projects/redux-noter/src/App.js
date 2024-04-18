@@ -1,7 +1,11 @@
+import AddNoteForm from "./features/notes/AddNoteForm";
+import NotesList from "./features/notes/NotesList";
+
 function App() {
   return (
     <div>
-      Hello world
+      <AddNoteForm />
+      <NotesList />
     </div>
   );
 }
