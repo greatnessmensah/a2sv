@@ -8,24 +8,6 @@ const initialState = [
     content: "my first content",
     date: sub(new Date(), { minutes: 20 }).toISOString(),
   },
-  {
-    id: nanoid(),
-    title: "my second note",
-    content: "my second content",
-    date: sub(new Date(), { minutes: 10 }).toISOString(),
-  },
-  {
-    id: nanoid(),
-    title: "my third note",
-    content: "my third content",
-    date: sub(new Date(), { minutes: 30 }).toISOString(),
-  },
-  {
-    id: nanoid(),
-    title: "my fourth note",
-    content: "my fourth content",
-    date: sub(new Date(), { minutes: 30 }).toISOString(),
-  },
 ];
 
 const notesSlice = createSlice({
@@ -54,17 +36,8 @@ const notesSlice = createSlice({
         if (existingNote) {
           existingNote.title = title;
           existingNote.content = content;
+          existingNote.date = new Date().toISOString();
         }
-      },
-      prepare(id, title, content) {
-        return {
-          payload: {
-            id,
-            title,
-            content,
-            date: new Date().toISOString(),
-          },
-        };
       },
     },
     noteDeleted: {

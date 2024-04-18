@@ -29,26 +29,34 @@ const AddNoteForm = () => {
 
   return (
     <section>
-      <h2>Add a New Note</h2>
-      <form>
-        <label>Post Title:</label>
-        <input
-          type="text"
-          value={title}
-          onChange={onTitleChanged}
-        />
-        <textarea
-          id="postContent"
-          name="postContent"
-          value={content}
-          onChange={onContentChanged}
-        />
-        <button type="button" className="bg-black text-white rounded-md w-24" onClick={onSavePostClicked} disabled={!canSave}>
-          Save Post
-        </button>
-      </form>
+      <div className="flex flex-col justify-center mt-5">
+        <div className="flex justify-center text-2xl">Redux Noter</div>
+        <div className="flex justify-center">
+          <form className="flex flex-col sm:w-11/12 lg:w-7/12">
+            <input className="mb-2 rounded-sm h-2/4"
+              type="text"
+              value={title}
+              onChange={onTitleChanged}
+              placeholder="Note tile"
+            />
+            <textarea className="sm:w-full mb-2 rounded-sm h-5/6"
+              placeholder="Add a new note"
+              value={content}
+              onChange={onContentChanged}
+            />
+            <button
+              type="button"
+              className="bg-black text-white rounded-md w-24"
+              onClick={onSavePostClicked}
+              disabled={!canSave}
+            >
+              Save Post
+            </button>
+          </form>
+        </div>
+      </div>
     </section>
-  )
+  );
 };
 
 export default AddNoteForm;

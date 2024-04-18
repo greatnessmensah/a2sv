@@ -33,7 +33,7 @@ const NotesList = () => {
             type="text"
             className="m-2"
             defaultValue={note.title}
-            onBlur={(e) => dispatch(noteEdited({ id: note.id, title: e.target.value }))}
+            onBlur={(e) => dispatch(noteEdited({ id: note.id, title: e.target.value, content: note.content }))}
           />
         ) : (
           <div className="text-2xl px-2 font-bold">{note.title}</div>
@@ -41,7 +41,7 @@ const NotesList = () => {
         {isEditing ? (
           <textarea
             defaultValue={note.content}
-            onBlur={(e) => dispatch(noteEdited({ id: note.id, content: e.target.value }))}
+            onBlur={(e) => dispatch(noteEdited({ id: note.id, title: note.title, content: e.target.value }))}
           />
         ) : (
           <p className="text-left font-semibold text-lg ">{note.content}</p>
@@ -62,10 +62,9 @@ const NotesList = () => {
 
   return (
     <section>
-      <div className="flex justify-center">
-        {/* <p className="flex self-center py-20 text-6xl">My Notes</p> */}
+      <div className="flex justify-center mt-16">
       </div>
-      <div className="mx-auto sm:grid grid-1 lg:grid grid-cols-3 w-auto justify-items-stretch">
+      <div className="mx-auto sm:grid grid-1 lg:grid grid-cols-3 w-4/5 justify-items-stretch">
         {renderedNotes}
       </div>
     </section>
